@@ -1,0 +1,65 @@
+group = 'com.nablarch.dev'
+version = '0.0.5'
+description = 'テストサポート'
+
+buildscript {
+  repositories {
+    mavenLocal()
+    maven { url "${developLibUrl}" }
+    jcenter()
+    
+    // サードパーティ製ライブラリの格納リポジトリ
+    if(project.hasProperty('nablarchExtRepoUrl')) {
+       maven { url "${nablarchExtRepoUrl}" }
+     }
+
+  }
+  dependencies {
+    classpath "com.nablarch.dev:nablarch-gradle-plugin:${nablarchGradlePluginVersion}"
+    classpath "net.saliman:gradle-cobertura-plugin:2.2.3"
+  }
+}
+
+apply {
+  plugin 'com.nablarch.dev.nablarch-build'
+  plugin 'com.nablarch.dev.nablarch-sonarqube'
+  plugin 'com.nablarch.dev.nablarch-maven-deploy'
+
+  from 'https://github.com/nablarch/nablarch-gradle-plugin/blob/develop/scripts/cobertura/cobertura-0.0.1.gradle?raw=true'
+}
+
+// ビルド時のJavaバージョンを指定する
+sourceCompatibility=JavaVersion.VERSION_1_6
+targetCompatibility=JavaVersion.VERSION_1_6
+
+dependencies {
+
+  compile 'com.nablarch.framework:nablarch-core:1.2.2'
+  compile 'com.nablarch.framework:nablarch-core-applog:1.0.1'
+  compile 'com.nablarch.framework:nablarch-core-jdbc:1.1.2'
+  compile 'com.nablarch.framework:nablarch-core-repository:1.0.1'
+
+  compile 'junit:junit:4.10'
+  compile 'com.nablarch.dev:nablarch-test-support-hereis:1.0.0'
+
+  compile 'org.eclipse.persistence:eclipselink:2.5.1'
+  compile 'org.mortbay.jetty:jsp-api-2.1-glassfish:2.1.v20100127'
+  compile 'javax.servlet:servlet-api:2.5'
+  compile (group: 'com.h2database', name: 'h2', version: '1.4.191')
+  
+  provided 'com.oracle:ucp:11.2.0.3.0'
+
+}
+
+test {
+  
+  ignoreFailures = true
+
+  beforeTest { descriptor ->
+    logger.lifecycle("Running test: " + descriptor)
+  }
+}
+
+task wrapper(type: Wrapper) {
+  gradleVersion = '2.13'
+}
