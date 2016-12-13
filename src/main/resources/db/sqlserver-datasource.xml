@@ -3,7 +3,7 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://tis.co.jp/nablarch/component-configuration ../../main/resources/component-configuration.xsd">
 
-  <component name="dataSource" class="test.support.db.datasource.DataSourceFactory">
+  <component name="dataSource" class="nablarch.test.support.db.datasource.DataSourceFactory">
     <property name="connectionFactoryClassName" value="com.microsoft.sqlserver.jdbc.SQLServerConnectionPoolDataSource" />
     <property name="user" value="${db.user}"/>
     <property name="password" value="${db.password}"/>
