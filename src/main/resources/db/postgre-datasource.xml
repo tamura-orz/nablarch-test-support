@@ -4,13 +4,10 @@
     xsi:schemaLocation="http://tis.co.jp/nablarch/component-configuration ../../main/resources/component-configuration.xsd">
 
   <component name="dataSource" class="nablarch.test.support.db.datasource.DataSourceFactory">
-    <property name="connectionFactoryClassName" value="org.postgresql.ds.PGPoolingDataSource" />
+    <property name="driverClassName" value="org.postgresql.Driver" />
     <property name="user" value="${db.user}" />
     <property name="password" value="${db.password}" />
     <property name="url" value="${db.url}" />
-    <property name="portNumber" value="${db.portNumber}" />
-    <property name="serverName" value="${db.serverName}" />
-    <property name="dbName" value="${db.dbName}" />
   </component>
 
   <component name="dialect" class="nablarch.core.db.dialect.PostgreSQLDialect" />
