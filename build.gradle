@@ -1,5 +1,5 @@
 group = 'com.nablarch.dev'
-version = '0.0.6'
+version = '0.0.7'
 description = 'テストサポート'
 
 buildscript {
@@ -34,20 +34,21 @@ targetCompatibility=JavaVersion.VERSION_1_6
 
 dependencies {
 
-  provided 'com.nablarch.framework:nablarch-core:1.2.2'
-  provided 'com.nablarch.framework:nablarch-core-applog:1.0.1'
-  provided 'com.nablarch.framework:nablarch-core-jdbc:1.1.2'
-  provided 'com.nablarch.framework:nablarch-core-repository:1.0.1'
+  provided 'com.nablarch.framework:nablarch-core:+'
+  provided 'com.nablarch.framework:nablarch-core-applog:+'
+  provided 'com.nablarch.framework:nablarch-core-jdbc:+'
+  provided 'com.nablarch.framework:nablarch-core-repository:+'
 
-  compile 'junit:junit:4.10'
+  compile 'junit:junit:4.12'
   compile 'com.nablarch.dev:nablarch-test-support-hereis:1.0.0'
 
-  compile 'org.eclipse.persistence:eclipselink:2.5.1'
-  compile 'org.mortbay.jetty:jsp-api-2.1-glassfish:2.1.v20100127'
-  compile 'javax.servlet:servlet-api:2.5'
-  
-  provided 'com.oracle:ucp:11.2.0.3.0'
+  compile 'org.eclipse.persistence:eclipselink:2.5.2'
+  compile 'org.mortbay.jetty:jsp-api-2.1-glassfish:9.1.1.B60.25.p2'
+  provided 'javax.servlet:servlet-api:2.5'
 
+  compile 'commons-dbcp:commons-dbcp:1.4'
+  
+  testCompile 'com.h2database:h2:1.4.191'
 }
 
 test {

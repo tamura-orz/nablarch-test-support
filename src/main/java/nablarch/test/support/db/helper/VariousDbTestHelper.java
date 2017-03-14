@@ -381,7 +381,7 @@ public class VariousDbTestHelper {
      * @param entityClass Entityクラス
      */
     public static <T> List<T> findAll(Class<T> entityClass) {
-        return findAll(entityClass, null);
+        return findAll(entityClass, (String[]) null);
 
     }
 

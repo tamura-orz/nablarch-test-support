@@ -4,7 +4,7 @@
                          xsi:schemaLocation="http://tis.co.jp/nablarch/component-configuration ../../main/resources/component-configuration.xsd">
 
     <component name="dataSource" class="nablarch.test.support.db.datasource.DataSourceFactory">
-        <property name="connectionFactoryClassName" value="org.h2.jdbcx.JdbcDataSource" />
+        <property name="driverClassName" value="org.h2.Driver" />
         <property name="user" value="${db.user}" />
         <property name="password" value="${db.password}" />
         <property name="url" value="${db.url}" />
