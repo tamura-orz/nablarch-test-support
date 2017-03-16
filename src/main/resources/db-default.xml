@@ -30,7 +30,7 @@
 
   <!-- ステートメントの設定 -->
   <component name="statementFactory"
-      class="nablarch.core.db.statement.BasicStatementFactory">
+      class="nablarch.core.db.statement.BasicStatementFactory" autowireType="None">
     <property name="fetchSize" value="50" />
     <property name="queryTimeout" value="600" />
     <property name="updatePreHookObjectHandlerList" ref="fieldAnnotationHandler" />
@@ -50,17 +50,17 @@
 
   <!-- ユーザID設定ハンドラ -->
   <component name="userIdAnnotationHandler"
-      class="nablarch.core.db.statement.autoproperty.UserIdAnnotationHandler">
+      class="nablarch.core.db.statement.autoproperty.UserIdAnnotationHandler" autowireType="None">
   </component>
 
   <!-- リクエストID設定ハンドラ -->
   <component name="requestIdAnnotationHandler"
-      class="nablarch.core.db.statement.autoproperty.RequestIdAnnotationHandler">
+      class="nablarch.core.db.statement.autoproperty.RequestIdAnnotationHandler" autowireType="None">
   </component>
 
   <!-- 実行時ID設定ハンドラ -->
   <component name="executionIdAnnotationHandler"
-      class="nablarch.test.support.db.statement.autoproperty.ExecutionIdAnnotationHandler">
+      class="nablarch.test.support.db.statement.autoproperty.ExecutionIdAnnotationHandler" autowireType="None">
   </component>
 
   <!-- フィールドアノテーションハンドラの設定 -->
