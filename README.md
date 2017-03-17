@@ -1,6 +1,8 @@
 nablarch-test-support
 ======================
 
+[![Build Status](https://travis-ci.org/tamura-orz/nablarch-test-support.svg?branch=develop)](https://travis-ci.org/tamura-orz/nablarch-test-support)
+
 Nablarchモジュールのテストで必要な共通処理をまとめています。
 
 既存のテストで使用しているnablarch-all-test及びnablarch-toolboxの処理を切り出しています。
